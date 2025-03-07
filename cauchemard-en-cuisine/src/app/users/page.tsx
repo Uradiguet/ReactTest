@@ -1,16 +1,16 @@
 import HttpService from "@/services/HttpService";
 import API_URLS from "@/constants/ApiUrls";
-import UsersComponent from "@/component/users/UsersComponent";
+import UsersComponent from "@/components/users/UsersComponent";
 
 const getUsers = async () => {
-    return await HttpService.get(API_URLS.users);
+    return HttpService.get(API_URLS.users);
 };
 
-export default async function Userspage(){
+export default async function UsersPage(){
     const users = await getUsers();
-    return(
+    return (
         <>
-            <UsersComponent users={users} />
+        <UsersComponent users={users} />
         </>
     );
 }

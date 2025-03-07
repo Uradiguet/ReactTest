@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
-import {Geist, Geist_Mono} from "next/font/google";
+import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import {Layout} from "antd";
-import {Content, Header} from "antd/es/layout/layout";
+import {Content, Header} from "antd/lib/layout/layout";
+import Sider from "antd/lib/layout/Sider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -24,7 +25,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-    return (
+  return (
     <html lang="fr">
     <head>
         <title>Kanban app</title>
@@ -32,16 +33,14 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-      <Layout>
-          <Header>
-              <h1 className={"text-amber-50"}>Kanban App</h1>
-          </Header>
-
-          <Content className={"p-10"}>
-              {children}
-          </Content>
-
-      </Layout>
+          <Layout>
+            <Header>
+              <h1 className={"text-amber-50"}>Kanban app</h1>
+            </Header>
+            <Content className={"p-10"}>
+            {children}
+            </Content>
+          </Layout>
       </body>
     </html>
   );
